@@ -58,4 +58,11 @@ class StringCalculatorTest < Minitest::Test
     end
   end
 
+  def test_ignoring_numbers_greater_than_1000
+    input = "2,1001,3"
+    expected_output = 5  # Only 2 and 3 are considered
+    result = string_calculator(input)
+    assert_equal(expected_output, result)
+  end
+
 end
