@@ -37,4 +37,9 @@ class StringCalculatorTest < Minitest::Test
     assert_equal(expected_output, result)
   end
 
+  def test_negative_numbers
+    input = "-1,2"
+    assert_raises(ArgumentError) { string_calculator(input) }
+  end
+
 end
