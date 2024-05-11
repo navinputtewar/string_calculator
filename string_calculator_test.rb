@@ -42,4 +42,11 @@ class StringCalculatorTest < Minitest::Test
     assert_raises(ArgumentError) { string_calculator(input) }
   end
 
+  def test_new_lines_between_numbers
+    input = "1\n2,3"
+    expected_output = 6
+    result = string_calculator(input)
+    assert_equal(expected_output, result)
+  end
+
 end
