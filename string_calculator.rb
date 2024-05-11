@@ -4,7 +4,7 @@ def string_calculator(input)
   match = input.match(/\/\/(.*?)\n/)
   delimiters = /[,\n;]/  # Regular expression for comma (,), newline (\n), or semicolon (;)
   # Spliting the input based on the delimiter
-  numbers = input.split(delimiters).map(&:to_i)
+  numbers = input.split(delimiters).map(&:to_i).select { |num| num <= 1000 }
   # Check for negative numbers
   negatives = numbers.select(&:negative?)
   raise ArgumentError, "Negative numbers not allowed: #{negatives.join(', ')}" if numbers.any?(&:negative?)
