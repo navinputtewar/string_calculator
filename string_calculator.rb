@@ -5,5 +5,7 @@ def string_calculator(input)
   delimiter = match ? match[1] : ","  # Set comma as default delimiter
   # Spliting the input based on the delimiter
   numbers = input.split(delimiter).map(&:to_i)
+  # Check for negative numbers
+  raise ArgumentError, "Negatives not allowed" if numbers.any?(&:negative?)
   numbers.sum
 end
