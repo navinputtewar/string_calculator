@@ -15,4 +15,11 @@ class StringCalculatorTest < Minitest::Test
     result = string_calculator(input)
     assert_equal(expected_output, result)
   end
+
+  def test_two_numbers_separated_by_comma_returns_sum
+    input = "1,5"
+    expected_output = 6
+    result = string_calculator(input)
+    assert_equal(expected_output, result)
+  end
 end
