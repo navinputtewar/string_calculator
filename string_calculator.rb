@@ -1,3 +1,3 @@
 def string_calculator(input)
-  raise NotImplementedError
+  return 0 if input.empty?
 end
