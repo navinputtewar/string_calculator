@@ -49,4 +49,13 @@ class StringCalculatorTest < Minitest::Test
     assert_equal(expected_output, result)
   end
 
+  def test_multiple_negative_numbers
+    input = "-1,-2,3"
+    begin
+      string_calculator(input)
+    rescue ArgumentError => e
+      assert_equal "Negative numbers not allowed: -1, -2", e.message
+    end
+  end
+
 end
