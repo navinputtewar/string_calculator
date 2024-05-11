@@ -1,9 +1,5 @@
 def string_calculator(input)
-  return 0 if input.empty?  # Handle empty input
-  numbers = input.split(",")
-  if numbers.length == 1 
-    numbers.first.to_i # Handle single number input
-  else
-   numbers.map(&:to_i).sum # Handle comma seperated number input
-  end
+  return 0 if input.empty?  # Handle empty input (optional)
+  numbers = input.split(",").map(&:to_i)  # Split by comma and convert each to integer
+  numbers.sum  # Sum the array of numbers
 end
