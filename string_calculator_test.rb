@@ -22,4 +22,19 @@ class StringCalculatorTest < Minitest::Test
     result = string_calculator(input)
     assert_equal(expected_output, result)
   end
+
+  def test_multiple_numbers_separated_by_comma_returns_sum
+    input = "1,2,3"
+    expected_output = 6
+    result = string_calculator(input)
+    assert_equal(expected_output, result)
+  end
+
+  def test_custom_delimiters
+    input = "//;\n1;2"  # Delimiter is ';'
+    expected_output = 3
+    result = string_calculator(input)
+    assert_equal(expected_output, result)
+  end
+
 end
