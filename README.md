@@ -47,10 +47,6 @@ This program includes unit tests to ensure its functionality. You can run the te
 
 Feel free to contribute to this project by forking the repository and submitting pull requests with improvements or bug fixes.
 
-License:
-
-This project is licensed under the MIT License.
-
 Author:
 
 Navin Puttewar
