@@ -1,5 +1,9 @@
 def string_calculator(input)
   return 0 if input.empty?  # Handle empty input (optional)
-  numbers = input.split(",").map(&:to_i)  # Split by comma and convert each to integer
-  numbers.sum  # Sum the array of numbers
+  # Extract custom delimiter (if present)
+  match = input.match(/\/\/(.*?)\n/)
+  delimiter = match ? match[1] : ","  # Set comma as default delimiter
+  # Spliting the input based on the delimiter
+  numbers = input.split(delimiter).map(&:to_i)
+  numbers.sum
 end
