@@ -6,6 +6,7 @@ def string_calculator(input)
   # Spliting the input based on the delimiter
   numbers = input.split(delimiters).map(&:to_i)
   # Check for negative numbers
-  raise ArgumentError, "Negatives not allowed" if numbers.any?(&:negative?)
+  negatives = numbers.select(&:negative?)
+  raise ArgumentError, "Negative numbers not allowed: #{negatives.join(', ')}" if numbers.any?(&:negative?)
   numbers.sum
 end
